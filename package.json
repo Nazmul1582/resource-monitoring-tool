@@ -19,5 +19,8 @@
     "url": "https://github.com/Nazmul1582/resource-monitoring-tool/issues"
   },
   "homepage": "https://github.com/Nazmul1582/resource-monitoring-tool#readme",
-  "description": ""
+  "description": "A Simple System Resource Monitoring Tool using Node.js/Express.js",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
