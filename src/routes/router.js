@@ -1,8 +1,7 @@
 const express = require("express")
 const router = express.Router()
+const getResource = require("../consollers/resource")
 
-router.get("/getmonitor", (req, res) => {
-  res.status(200).send("Welcome to our Resource Monitoring Tool!")
-})
+router.get("/getmonitor", getResource)
 
 module.exports = router
