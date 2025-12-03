@@ -1,14 +1,22 @@
+const storeResource = require("../utils/storeResource")
+
 const resourceMonitor = (req, res, next) => {
-  console.log("Process Details: ")
-  console.log(`PID: ${process.pid}`)
-  console.log(`Platform: ${process.platform}`)
-  console.log(`Node Version: ${process.version}`)
-  console.log(`Memory Usage: ${process.memoryUsage()}`)
-  console.log(`CPU Usage: ${process.cpuUsage()}`)
-  console.log(`Uptime (seconds): ${process.uptime()}`)
-  console.log(`Current working directory: ${process.cwd()}`)
-  console.log(`Execution path: ${process.execPath}`)
-  console.log(`Arguments: ${process.argv.join(" ")}`)
+  // for (let i = 0; i < 1000000000; i++) {
+  //   console.log("looping....")
+  // }
+
+  let resource = {
+    pid: process.pid,
+    platform: process.platform,
+    nodeVersion: process.version,
+    memoryUsage: process.memoryUsage(),
+    cpuUsage: process.cpuUsage(),
+    uptime: process.uptime(),
+    cwd: process.cwd(),
+    execPath: process.execPath,
+    argv: process.argv,
+  }
+  setInterval(() => storeResource(resource), 2000)
 
   next()
 }
